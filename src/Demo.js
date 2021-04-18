@@ -1,12 +1,18 @@
 import './App.css';
+import Header from './component/Header';
+import { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-function Demo() {
-  return (
-    <div className="Demo">
-        <h1>Chào Ngày Mới</h1>
-        <p>Chúc bạn có một ngày mới thật nhiều năng lượng</p>
-    </div>
-  );
+class Demo extends Component{
+  render(){
+    return (
+      <div className="Demo">
+        <Header></Header>
+        
+  
+      </div>
+    );
+  }
 }
 
 export default Demo;
