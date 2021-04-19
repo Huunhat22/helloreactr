@@ -2,6 +2,7 @@ import './App.css';
 import Header from './component/Header';
 import { Component } from 'react';
 import Product from './component/Poduct';
+import Excercise from './component/excercise';
 
 class Demo extends Component{
   render(){
@@ -16,7 +17,7 @@ class Demo extends Component{
             <Product/>
           </div>
         </div>
-        
+        <Excercise></Excercise>
       </div>
     );
   }
