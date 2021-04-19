@@ -1,13 +1,24 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 
-class Product extends Component{
-    render(){
-        return(
-            <div>
-                
+class Product extends Component {
+    render() {
+        return (
+            <div className="">
+                <div className="card">
+                <img src="https://hoaonline247.com/photos/view/photos/larges//5d159b84866857687f793219.cl.jpg" className="card-img-top" alt="..."></img>
+                <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a className="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
             </div>
+
         );
     }
 }
 
 export default Product;
+
+/* sử dụng alt shift k để format code */

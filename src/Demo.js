@@ -1,15 +1,22 @@
 import './App.css';
 import Header from './component/Header';
 import { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Product from './component/Poduct';
 
 class Demo extends Component{
   render(){
     return (
       <div className="Demo">
         <Header></Header>
+        <div className="row">
+          <div className="col-6 col-sm-6 col-md-6 col-lg-6">
+            <Product/>
+          </div>
+          <div className="col-6 col-sm-6 col-md-6 col-lg-6">
+            <Product/>
+          </div>
+        </div>
         
-  
       </div>
     );
   }
