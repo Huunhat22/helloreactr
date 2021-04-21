@@ -1,0 +1,5 @@
+.card-img-top{
+    width: 250px;
+    padding: 15px;
+    object-fit: cover;
+}
