@@ -2,6 +2,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from "react";
 
 class Props extends Component{
+
+    // tạo 1 function để xử lý sự kiện onclick
+    onAddToCard = () => {
+        alert(this.props.Name + " - "+ this.props.Price);
+    }
+
     render(){
         return(
             <div className="col-3 col-sm-4 col-md-3 col-lg-3">
@@ -13,9 +19,9 @@ class Props extends Component{
                         <p className="card-text">
                             {this.props.Price}
                         </p>
-                        <a className="btn btn-primary">
-                            {this.props.Buy}
-                        </a>
+                        <button className="btn btn-primary" onClick={this.onAddToCard}>
+                            Buy Now
+                        </button>
                     </div>
                 </div>
             </div>

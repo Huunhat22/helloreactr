@@ -1,5 +1,6 @@
 // import './App.css';
 import './css/style.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './component/Header';
 import { Component } from 'react';
 import Product from './component/Poduct';
@@ -7,6 +8,29 @@ import Excercise from './component/excercise';
 import Props from './component/Props';
 
 class Demo extends Component{
+
+  // 1 cách sử dụng của Refs link tham khảo : https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
+  constructor(props){
+    super(props);
+    this.textInput = null;
+
+    this.setTextInputRef = element =>{
+      this.textInput = element;
+    }
+
+    this.addToProduct = () =>{
+      if (this.textInput) {
+        console.log(this.textInput.value);
+        // this.textInput.focus();
+      }
+    };
+  }
+
+  componentDidMount(){
+    // Autofocus the input on mount
+    this.addToProduct();
+  }
+
   render(){
 
     // tao 1 mang chua nhieu doi tuong - Thực hành Props
@@ -49,7 +73,6 @@ class Demo extends Component{
                 key = {Item.id}
                 Name ={Item.mobilename}
                 Price = {Item.mobileprice}
-                Buy ="Buy Now"
                 Image= {Item.Image}
               />
     }
@@ -70,12 +93,30 @@ class Demo extends Component{
         <Excercise></Excercise>
 
         <h1>Thực hành về Props</h1>
-        
+
         <div className="container">
-              <div className="row">
-                {elements}
+
+        <div className="row">
+          <div className="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div className="mb-3">
+              <div className="mb-3">
+                <label className="form-label">Thêm Sản Phẩm</label>
+                <input type="text" className="form-control" ref ={this.setTextInputRef} />
               </div>
+              <button type="submit" className="btn btn-primary" onClick={this.addToProduct}>Lưu</button>
+            </div>
+          </div>
         </div>
+
+
+        <div className="row">
+            {elements}
+        </div>
+
+        
+
+      </div>
+        
       </div>
     );
   }
