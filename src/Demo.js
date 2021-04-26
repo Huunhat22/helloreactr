@@ -68,8 +68,14 @@ class Demo extends Component{
     this.addToProduct();
   }
 
-  render(){
+  //Xử lý sự kiện cho hàm changeValue -> nó là setState
+  changeValue = ()=>{
+      this.setState({
+        isActive : !this.state.isActive
+      });
+  }
 
+  render(){
     // tao 1 mang chua nhieu doi tuong - Thực hành Props
     var mobileList = [
       {
@@ -182,6 +188,9 @@ class Demo extends Component{
                   {stateElement}
                 </tbody>
               </table>
+              <button type="button" className="btn btn-outline-primary" onClick={this.changeValue}>
+                Active : {this.state.isActive === true  ? 'True' : 'False'}
+              </button>
             </div>
           </div>
       </div>
